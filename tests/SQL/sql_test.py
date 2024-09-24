@@ -98,3 +98,23 @@ def test_get_grade_A_assignments_for_teacher_with_max_grading():
     # Execute the SQL query again and check if the count matches the newly created assignments
     sql_result = db.session.execute(text(sql)).fetchall()
     assert grade_a_count_2 == sql_result[0][0]
+def test_get_grade_A_assignments_for_teacher_with_max_grading():
+    """
+    Test to get count of grade A assignments for teacher which has graded maximum assignments
+    """
+    
+    # Setup: Create and grade 5 assignments
+    grade_a_count_1 = create_n_graded_assignments_for_teacher(5)  # Ensure this creates 3 Grade A
+    
+    # Read SQL from file
+    with open('tests/SQL/count_grade_A_assignments_by_teacher_with_max_grading.sql', encoding='utf8') as fo:
+        sql = fo.read()
+    
+    # Execute the SQL query
+    sql_result = db.session.execute(text(sql)).fetchall()
+
+    # Debugging
+    print(f"Expected count: {grade_a_count_1}, SQL result: {sql_result[0][0]}")
+    
+    # Assert that the created assignments match the SQL result
+    assert grade_a_count_1 == sql_result[0][0]
