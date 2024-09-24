@@ -1,58 +1,87 @@
-# Fyle Backend Challenge
+Fyle Backend Challenge
+Overview
 
-## Who is this for?
+This project is a backend service designed for a classroom management system as part of the Fyle internship challenge. It aims to handle assignments, grading, and student-teacher interactions effectively.
+Who Is This For?
 
-This challenge is meant for candidates who wish to intern at Fyle and work with our engineering team. You should be able to commit to at least 6 months of dedicated time for internship.
+This challenge is intended for candidates interested in interning at Fyle and collaborating with our engineering team. A commitment of at least 6 months is required for the internship.
+Why Work at Fyle?
 
-## Why work at Fyle?
+Fyle is a rapidly growing Expense Management SaaS product with a robust engineering team of around 40 members. We pride ourselves on transparency and teamwork. For insights into our work culture, check our careers page and Glassdoor reviews.
+Challenge Outline
 
-Fyle is a fast-growing Expense Management SaaS product. We are ~40 strong engineering team at the moment. 
+Candidates are encouraged to utilize any online or AI tools (like ChatGPT, Gemini, etc.) to assist in completing the challenge. However, a thorough understanding of the code and logic is expected.
+Key Features
 
-We are an extremely transparent organization. Check out our [careers page](https://careers.fylehq.com) that will give you a glimpse of what it is like to work at Fyle. Also, check out our Glassdoor reviews [here](https://www.glassdoor.co.in/Reviews/Fyle-Reviews-E1723235.htm). You can read stories from our teammates [here](https://stories.fylehq.com).
+    Assignments Management: Create, retrieve, submit, and grade assignments.
+    User Roles: Support for students, teachers, and principals with role-specific functionalities.
 
+Getting Started
+Installation
 
-## Challenge outline
+    Fork this Repository: Create a copy of this repository in your GitHub account.
+    Clone the Forked Repository:
 
-**You are allowed to use any online/AI tool such as ChatGPT, Gemini, etc. to complete the challenge. However, we expect you to fully understand the code and logic involved.**
+    bash
 
-This challenge involves writing a backend service for a classroom. The challenge is described in detail [here](./Application.md)
+    git clone <your-fork-url>
+    cd <your-repo-name>
 
+Install Requirements
 
-## What happens next?
+    Create a virtual environment and activate it:
 
-You will hear back within 48 hours from us via email. 
+    bash
 
-
-## Installation
-
-1. Fork this repository to your github account
-2. Clone the forked repository and proceed with steps mentioned below
-
-### Install requirements
-
-```
 virtualenv env --python=python3.8
 source env/bin/activate
-pip install -r requirements.txt
-```
-### Reset DB
 
-```
+Install the necessary dependencies:
+
+bash
+
+    pip install -r requirements.txt
+
+Reset Database
+
+    Set the Flask application:
+
+    bash
+
 export FLASK_APP=core/server.py
-rm core/store.sqlite3
-flask db upgrade -d core/migrations/
-```
-### Start Server
 
-```
+Remove the existing database and upgrade:
+
+bash
+
+    rm core/store.sqlite3
+    flask db upgrade -d core/migrations/
+
+Start Server
+
+Run the server using the following command:
+
+bash
+
 bash run.sh
-```
-### Run Tests
 
-```
+Run Tests
+
+To execute the tests, use:
+
+bash
+
 pytest -vvv -s tests/
 
-# for test coverage report
-# pytest --cov
-# open htmlcov/index.html
-```
+For a test coverage report, run:
+
+bash
+
+pytest --cov
+open htmlcov/index.html
+
+What Happens Next?
+
+You will receive feedback within 48 hours via email after submission.
+
+Feel free to adjust any sections as needed!
